@@ -32,7 +32,7 @@ public class App
     @Test
     public static void testPeopleWithHeightGreaterThan200() {
         Response response = given().param("height__gt", 200).get("/people");
-        int expectedCount = 10; // change this if the expected count changes
+        int expectedCount = 10; 
         int actualCount = response.jsonPath().getList("results").size();
         assertEquals(actualCount, expectedCount);
     }
@@ -54,14 +54,14 @@ public class App
     public static void testTotalNumberOfPeople() {
         Response response = given().get("/people");
         int actualTotal = response.jsonPath().getInt("count");
-        int expectedTotal = 82; // change this if the expected count changes
+        int expectedTotal = 82; 
         assertEquals(actualTotal, expectedTotal);
     }
     public static void main( String[] args )
     {
     	RestAssured.baseURI = BASE_URL;
 
-        // Run your tests and print the results
+       
         testPeopleEndpointSuccess();
         testPeopleWithHeightGreaterThan200();
         testSpecificIndividuals();
